@@ -14,3 +14,10 @@ __pycache__/
 .ipynb_checkpoints/
 .idea/
 .vscode/
+
+# The public 5-minute ground truth ships with the official repository (MIT) and is what
+# evaluation/run_evaluation.py scores against. The full-match ground truth must never be here.
+!evaluation/gt/*_possession_gt_public.csv
+!evaluation/gt/*_possession_gt_public_meta.json
+evaluation/scoreboard.csv
+evaluation/reports/

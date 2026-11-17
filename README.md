@@ -31,6 +31,16 @@ the set-piece intervals to `data/processed/` (git-ignored). `run.py` labels ever
 `evaluation/results/The goats.csv` and checks it with the official validator. There is no
 randomness: the same data gives the same file, byte for byte.
 
+## Score on the public 5 minutes
+
+```bash
+python evaluation/run_evaluation.py --no-detail
+```
+
+Scores every CSV in `evaluation/results/` against the public ground truth that ships with the
+official repository (`evaluation/gt/`, 17 possessions). It is a check that the pipeline is correct,
+not a tuning set.
+
 ## Tests
 
 ```bash
@@ -50,4 +60,4 @@ python -m unittest discover -s solution/tests -t .
 | `solution/teams.py` | which team has it? |
 | `solution/viterbi.py` | best label sequence given per-frame evidence and a cost per change |
 | `solution/params.py` | every parameter, with its reason |
-| `games.py`, `starter/{baseline,load_atd,load_smart_tagging}.py`, `evaluation/possession_metrics.py` | unchanged from the official challenge repository (© Metrica Sports, MIT, see `LICENSE`) |
+| `games.py`, `starter/{baseline,load_atd,load_smart_tagging}.py`, `evaluation/{possession_metrics,run_evaluation}.py`, `evaluation/gt/` (public 5 minutes) | unchanged from the official challenge repository (© Metrica Sports, MIT, see `LICENSE`) |

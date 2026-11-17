@@ -157,6 +157,7 @@ def main(argv=None):
     print("\n{}  {}".format("INVALID: " + problem if problem else "valid",
                             display_path(path)))
     summarise(labels, blocks)
+    print("\nscore on the public window:  python evaluation/run_evaluation.py")
     return 1 if problem else 0
 
 
