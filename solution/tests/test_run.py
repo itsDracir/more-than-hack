@@ -11,7 +11,8 @@ import pandas as pd
 import games
 from solution.labeling import REQUIRED_COLUMNS
 from solution.run import ROOT as REPO_ROOT
-from solution.run import display_path, load_events, load_features, main, write_submission
+from solution.run import (DEFAULT_EVENTS, DEFAULT_FEATURES, display_path, load_events,
+                          load_features, main, write_submission)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.join(ROOT, "evaluation"))
@@ -41,6 +42,13 @@ class RunTest(unittest.TestCase):
         self.assertEqual(features["ball_visible"].dtype, bool)
         self.assertTrue(np.isnan(features.loc[0, "ball_x_norm"]))
         self.assertAlmostEqual(features.loc[1, "home_nearest_m"], 1.25)
+
+    def test_processed_files_live_in_this_repository(self):
+        # Les dades originals poden ser a qualsevol lloc (MTAH_DATA_DIR), però el notebook desa
+        # les sortides a data/processed/ d'aquest repositori, i run.py les hi ha de buscar.
+        processed = os.path.join(REPO_ROOT, "data", "processed")
+        self.assertEqual(os.path.dirname(DEFAULT_FEATURES), processed)
+        self.assertEqual(os.path.dirname(DEFAULT_EVENTS), processed)
 
     def test_display_path_is_relative_inside_the_repo(self):
         inside = os.path.join(REPO_ROOT, "evaluation", "results", "team.csv")

@@ -31,8 +31,11 @@ from solution.labeling import label_frames  # noqa: E402
 from solution.params import Params  # noqa: E402
 
 SPEED_COLUMNS = ["home_mean_speed_mps", "away_mean_speed_mps"]
-DEFAULT_FEATURES = os.path.join(games.DATA_DIR, "processed", "features_tactical.csv")
-DEFAULT_EVENTS = os.path.join(games.DATA_DIR, "processed", "smart_tagging_events.json")
+# Les dades originals poden ser fora (MTAH_DATA_DIR); el que en surt viu sempre dins d'aquest
+# repositori, a data/processed/, que git ignora.
+PROCESSED_DIR = os.path.join(ROOT, "data", "processed")
+DEFAULT_FEATURES = os.path.join(PROCESSED_DIR, "features_tactical.csv")
+DEFAULT_EVENTS = os.path.join(PROCESSED_DIR, "smart_tagging_events.json")
 RESULTS_DIR = os.path.join(ROOT, "evaluation", "results")
 
 REBUILD = """Build it with the preprocessing notebook, end to end (outputs go to data/processed/,

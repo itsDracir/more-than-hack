@@ -27,7 +27,8 @@ python solution/run.py --name "The goats"
 ```
 
 The notebook is the only step that reads the raw data. It writes the per-frame feature table and
-the set-piece intervals to `data/processed/` (git-ignored). `run.py` labels every frame, writes
+the set-piece intervals to this repository's `data/processed/` (git-ignored), wherever the raw
+data is. `run.py` labels every frame, writes
 `evaluation/results/The goats.csv` and checks it with the official validator. There is no
 randomness: the same data gives the same file, byte for byte.
 
