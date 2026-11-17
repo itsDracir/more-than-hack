@@ -1,0 +1,16 @@
+# This repository is public. The match data is not redistributable: nothing under data/ (raw
+# bundle, processed features, executed notebooks) and no generated labels may ever be committed.
+data/
+evaluation/results/
+*.csv
+*.json
+*.npy
+*.parquet
+*.mp4
+*.pdf
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.idea/
+.vscode/
