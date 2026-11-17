@@ -2,8 +2,8 @@
 
 Labels every frame of the BAR-ATH tactical video as `H` / `A` / `D` / `X`. No model is trained and
 no labelled data is used: per-frame evidence from the tracking and the Smart Tagging, decoded into
-clean intervals with Viterbi. The method is explained in the technical document submitted with
-the form.
+clean intervals with Viterbi. Approach, assets, parameters, possession rules, results and
+limitations: [TECHNICAL.md](TECHNICAL.md).
 
 ## Install
 
