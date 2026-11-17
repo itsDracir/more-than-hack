@@ -185,7 +185,7 @@ pip install -r requirements-lock.txt
 python -m jupyter nbconvert --to notebook --execute solution/01_preprocessing.ipynb --output-dir data/processed
 python solution/run.py --name "The goats"     # writes evaluation/results/The goats.csv and validates it
 python evaluation/run_evaluation.py --no-detail   # optional: score on the public 5 minutes
-python -m unittest discover -s solution/tests -t .   # 41 tests
+python -m unittest discover -s solution/tests -t .   # 42 tests
 ```
 
 The executed notebook, the feature table and the set-piece JSON go to `data/processed/`, which git
